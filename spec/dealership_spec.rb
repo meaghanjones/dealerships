@@ -35,4 +35,12 @@ describe(Dealership) do
       expect(Dealership.all()).to(eq([test_dealership1, test_dealership2]))
     end
   end
+
+  describe('#id') do
+    it('returns an id for a dealership') do
+      test_dealership = Dealership.new({:name => "Bob's Used Cars", :cars => ["Kia", "Mazda"]})
+      expect(test_dealership.id()).to(eq(1))
+    end
+  end
+
 end

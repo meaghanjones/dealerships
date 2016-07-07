@@ -3,11 +3,12 @@ require('pry')
 class Dealership
   @@dealerships = []
 
-  attr_reader(:name, :cars)
+  attr_reader(:name, :cars, :id)
 
   define_method(:initialize) do |attributes|
     @name = attributes.fetch(:name)
     @cars = attributes.fetch(:cars)
+    @id=@@dealerships.length().+(1)
   end
 
   define_singleton_method(:clear) do
