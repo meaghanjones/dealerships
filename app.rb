@@ -7,3 +7,8 @@ require('./lib/dealership')
 get('/') do
   erb(:index)
 end
+
+get('/dealerships') do
+  @dealerships = Dealership.all()
+  erb(:dealerships)
+end
