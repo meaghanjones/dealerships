@@ -43,4 +43,14 @@ describe(Dealership) do
     end
   end
 
+  describe('#find') do
+    it('finds a dealership based on the id') do
+      test_dealership1 = Dealership.new({:name => "Bob's Used Cars", :cars => ["Kia", "Mazda"]})
+      test_dealership1.save()
+      test_dealership2 = Dealership.new({:name => "Car-O-Rama", :cars => []})
+      test_dealership2.save()
+      expect(Dealership.find(2)).to(eq(test_dealership2))
+    end
+  end
+
 end
