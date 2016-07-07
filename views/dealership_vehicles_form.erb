@@ -1,4 +1,5 @@
 <form action="/vehicles" method="post">
+  <input id='dealership_id' name='dealership_id' type='hidden' value='<%= @dealership.id() %>'>
   <label for="make">Vehicle make:</label>
   <input type="text" name="make" id="make">
   <label for="model">Vehicle model:</label>
