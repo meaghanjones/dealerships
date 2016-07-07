@@ -7,7 +7,7 @@ class Dealership
 
   define_method(:initialize) do |attributes|
     @name = attributes.fetch(:name)
-    @cars = attributes.fetch(:cars)
+    @cars = []
     @id=@@dealerships.length().+(1)
   end
 
@@ -21,6 +21,10 @@ class Dealership
 
   define_singleton_method(:all) do
     @@dealerships
+  end
+
+  define_method(:add_vehicle) do |vehicle|
+    @cars.push(vehicle)
   end
 
   define_singleton_method(:find) do |id|
