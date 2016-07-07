@@ -26,10 +26,13 @@ describe(Dealership) do
       expect(test_dealership.save()).to(eq([test_dealership]))
     end
   end
-  # describe('.all') do
-  #   it('returns all dealerships') do
-  #     test_dealership1 = Dealership.new({:name => "Bob's Used Cars", :cars => ["Kia", "Mazda"]})
-  #
-  #   end
-  # end
+  describe('.all') do
+    it('returns all dealerships') do
+      test_dealership1 = Dealership.new({:name => "Bob's Used Cars", :cars => ["Kia", "Mazda"]})
+      test_dealership1.save()
+      test_dealership2 = Dealership.new({:name => "Car-O-Rama", :cars => []})
+      test_dealership2.save()
+      expect(Dealership.all()).to(eq([test_dealership1, test_dealership2]))
+    end
+  end
 end
