@@ -20,4 +20,7 @@ class Vehicle
     @@vehicles.push(self)
   end
 
+  define_singleton_method(:all) do
+    @@vehicles
+  end
 end
