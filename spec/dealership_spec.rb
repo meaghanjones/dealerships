@@ -49,7 +49,7 @@ describe(Dealership) do
       test_dealership1.save()
       test_dealership2 = Dealership.new({:name => "Car-O-Rama", :cars => []})
       test_dealership2.save()
-      expect(Dealership.find(2)).to(eq(test_dealership2))
+      expect(Dealership.find(test_dealership2.id())).to(eq(test_dealership2))
     end
   end
 

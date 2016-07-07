@@ -5,7 +5,7 @@ describe(Vehicle) do
   before() do
     Vehicle.clear()
   end
-  
+
   describe('#make') do
     it("returns the name of the vehicle") do
       test_vehicle = Vehicle.new({:make => "Mazda", :model => "Protege", :year => 2001})
@@ -35,4 +35,22 @@ describe(Vehicle) do
       expect(Vehicle.all()).to(eq([test_vehicle]))
     end
   end
+
+  describe('#id') do
+    it('returns a unique vehicle id') do
+      test_vehicle = Vehicle.new({:make => "Mazda", :model => "Protege", :year => 2001})
+      expect(test_vehicle.id()).to(eq(1))
+    end
+  end
+
+  describe(".find") do
+    it ('finds a vehicle based on an id') do
+      test_vehicle = Vehicle.new({:make => "Mazda", :model => "Protege", :year => 2001})
+      test_vehicle.save()
+      test_vehicle2 = Vehicle.new({:make => "Kia", :model => "Rio", :year => 2002})
+      test_vehicle2.save()
+      expect(Vehicle.find(test_vehicle.id())).to(eq(test_vehicle))
+    end
+  end
+
 end
