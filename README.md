@@ -1,4 +1,4 @@
-# dealerships
+# Dealerships
 ### Meaghan Jones and Stephanie Gurung 
 
 ### Description 
